@@ -1,0 +1,22 @@
+<main>
+    <app-header titulo="Bem-Vindo"></app-header>
+
+    <div class="bts-container">
+
+       <div class="titulo">Login</div>
+
+    </div>
+
+    <form (ngSubmit)="fazerLogin()" class="form-container">
+
+        <input type="text" [(ngModel)]="loginData.email" name="email" id="email" placeholder="E-mail">
+        <input type="password" [(ngModel)]="loginData.senha" name="senha" id="senha" placeholder="Senha">
+
+        <input type="submit" value="Login" class="login-btn">
+        <input type="button" value="Não tenho Cadastro" class="cadastro-btn" (click)="redirectToTelaCadastro()">
+      </form>
+
+
+
+
+</main>

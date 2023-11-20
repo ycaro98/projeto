@@ -1,0 +1,32 @@
+<main>
+  <app-header titulo="Cadastro"></app-header>
+
+  <input type="button" value="Voltar" class="voltar-btn" (click)="goBack()">
+
+  <div class="bts-container">
+    <input type="button" value="Cadastro de Professor" class="button" (click)="showFormCadastro('prof')">
+  </div>
+
+  <form class="form-container" *ngIf="isProf">
+    <!-- Campos para cadastro de professor -->
+    <input type="text" name="nome" id="nome" placeholder="Nome" [(ngModel)]="nome">
+    <input type="text" name="cpf" id="cpf" placeholder="CPF" [(ngModel)]="cpf">
+    <input type="tel" name="tel" id="tel" placeholder="Contato" [(ngModel)]="contato">
+    <input type="date" name="dataNascimento" id="dataNascimento" [(ngModel)]="dataNascimento">
+    <input type="text" name="endereco" id="endereco" placeholder="Endereço" [(ngModel)]="endereco">
+    <div class="caixa-selecao">
+      <label for="nivel-formacao">Nível de Formação:</label>
+      <select id="nivel-formacao" name="nivel-formacao" aria-placeholder="Nível de Formação:" [(ngModel)]="nivelFormacao">
+        <option value="Licenciatura">Licenciatura</option>
+        <option value="Mestrado">Mestrado</option>
+        <option value="Pós-Graduação">Pós-Graduação</option>
+        <option value="Doutorado">Doutorado</option>
+        <option value="outros">Outros</option>
+      </select>
+    </div>
+    <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="email">
+    <input type="senha" name="senha" id="senha" placeholder="senha" [(ngModel)]="senha">
+    <input type="text" name="areaEs" id="areaEs" placeholder="Área de especialização" [(ngModel)]="areaEspecializacao">
+    <input type="submit" value="Cadastrar" class="cadastrar-btn" (click)="cadastrar()">
+  </form>
+</main>

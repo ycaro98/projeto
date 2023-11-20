@@ -1,0 +1,33 @@
+table {
+  margin-top: 30px;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.mat-header-cell { //Cabeçalho
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+
+  .mat-row:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .mat-row:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  .mat-cell {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  .mat-header-cell:first-child, .mat-cell:first-child {
+    width: 20%;
+  }
+  .mat-header-cell:nth-child(2), .mat-cell:nth-child(2) {
+    width: 10%;
+  }
+  /* Defina larguras para outras colunas conforme necessário */
+   
+  
