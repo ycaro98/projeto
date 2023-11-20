@@ -7,7 +7,7 @@ import {Disciplina} from '../interfaces/disciplina';
   providedIn: 'root'
 })
 export class DisciplinaService {
-  private apiUrl = 'http://localhost:8080/disciplina';
+  private apiUrl = 'http://localhost:8080/api/disciplina';
 
   constructor(private http: HttpClient) {}
 
