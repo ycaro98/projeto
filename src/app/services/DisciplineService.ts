@@ -1,14 +1,13 @@
-import { DisciplinaComponent } from './../components/disciplina/disciplina.component';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Disciplina} from '../interfaces/disciplina'
+import {Disciplina} from '../interfaces/disciplina';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DisciplinaService {
-  private apiUrl = 'http://localhost:8080/disciplina'; // Ajuste a URL conforme necessário
+  private apiUrl = 'http://localhost:8080/disciplina';
 
   constructor(private http: HttpClient) {}
 

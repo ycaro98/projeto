@@ -13,7 +13,7 @@ import { PainelComponent } from './components/painel/painel.component';
 import { NotasTableComponent } from './tabelas/notas-table/notas-table.component';
 import { FaltasTableComponent } from './tabelas/faltas-table/faltas-table.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DisciplinaComponent } from './components/disciplina/disciplina.component';
+import { ListaDisciplinasComponent } from './components/disciplina/disciplina.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { DisciplinaComponent } from './components/disciplina/disciplina.componen
     PainelComponent,
     NotasTableComponent,
     FaltasTableComponent,
-    DisciplinaComponent
+    ListaDisciplinasComponent
   ],
   imports: [
     BrowserModule,
