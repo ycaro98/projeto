@@ -27,6 +27,15 @@
     <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="email">
     <input type="senha" name="senha" id="senha" placeholder="senha" [(ngModel)]="senha">
     <input type="text" name="areaEs" id="areaEs" placeholder="Área de especialização" [(ngModel)]="areaEspecializacao">
+    <div class="caixa-selecao">
+      <label for="disciplina">Disciplina:</label>
+      <select id="disciplina" name="disciplina" [(ngModel)]="novoUsuario.disciplina">
+        <option value="">Selecione a disciplina</option>
+        <option *ngFor="let disciplina of disciplinas" [ngValue]="disciplina">
+          {{ disciplina.nomeDisciplina }}
+        </option>
+      </select>
+    </div>
     <input type="submit" value="Cadastrar" class="cadastrar-btn" (click)="cadastrar()">
   </form>
 </main>

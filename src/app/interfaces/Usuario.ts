@@ -1,4 +1,5 @@
 import { roleTypeEnum } from "../enums/roleTypeEnum";
+import { Disciplina } from "./disciplina";
 
 export interface Usuario {
     nome: string;
@@ -11,5 +12,5 @@ export interface Usuario {
     senha: string;
     role: roleTypeEnum;
     areaEspecializacao?: string; // Campo opcional para professor
+    disciplina: Disciplina;
   }
-  

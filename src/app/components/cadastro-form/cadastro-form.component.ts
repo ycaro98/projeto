@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { AuthService } from 'src/app/services/AuthService';
 import { roleTypeEnum } from 'src/app/enums/roleTypeEnum';
 import { Router } from '@angular/router';
+import { DisciplinaService } from 'src/app/services/DisciplineService';
+import { Disciplina } from 'src/app/interfaces/disciplina';
 
 @Component({
   selector: 'app-cadastro-form',
@@ -15,8 +17,8 @@ export class CadastroFormComponent {
   isProf: boolean = true;
   isAdmin: boolean = false;
   isAluno: boolean = false;
-
-
+  disciplinas: Disciplina[] = [{ id: 1, nomeDisciplina: 'Laboratório de Inovação IV', descricao: 'nada' },
+  { id: 2, nomeDisciplina: 'Programação Orientada a Objeto II', descricao: 'nada' }];
 
   novoUsuario: Usuario = {
     nome: '',
@@ -28,28 +30,28 @@ export class CadastroFormComponent {
     email: '',
     senha: '',
     areaEspecializacao: '',
-    role: roleTypeEnum.professor
+    role: roleTypeEnum.professor,
+    disciplina: { id: 0, nomeDisciplina: '', descricao: '' }
   };
 
-    // Propriedades vinculadas ao ngModel formulário
-    public nome: string = '';
-    public cpf: string = '';
-    public contato: string = '';
-    public dataNascimento: string = '';
-    public endereco: string = '';
-    public nivelFormacao: string = '';
-    public email: string = '';
-    public senha: string = '';
-    public areaEspecializacao: string = '';
+  // Propriedades vinculadas ao ngModel formulário
+  public nome: string = '';
+  public cpf: string = '';
+  public contato: string = '';
+  public dataNascimento: string = '';
+  public endereco: string = '';
+  public nivelFormacao: string = '';
+  public email: string = '';
+  public senha: string = '';
+  public areaEspecializacao: string = '';
 
-  constructor(private router: Router, private location: Location, private authService: AuthService){}
+  constructor(private router: Router, private location: Location, private authService: AuthService) { }
 
   public cadastrar(): void {
 
     this.novoUsuario.email = this.email;
     this.novoUsuario.senha = this.senha;
     this.novoUsuario.role = this.getRoleSelected()
-
 
     this.authService.cadastrarUsuario(this.novoUsuario).subscribe(
       resposta => {
@@ -85,17 +87,17 @@ export class CadastroFormComponent {
         // Lidar com um tipo de usuário desconhecido, se necessário.
         break;
     }
-}
+  }
 
 
   public getRoleSelected() {
-    if(this.isProf) return roleTypeEnum.professor;
+    if (this.isProf) return roleTypeEnum.professor;
     return roleTypeEnum.default;
   }
 
-    goBack(): void {
-      this.location.back();
-    }
+  goBack(): void {
+    this.location.back();
+  }
 
 }
 

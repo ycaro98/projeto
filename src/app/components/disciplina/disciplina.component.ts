@@ -9,10 +9,7 @@ import { DisciplinaService } from 'src/app/services/DisciplineService';
   styleUrls: ['./disciplina.component.scss']
 })
 export class ListaDisciplinasComponent implements OnInit {
-  disciplinas: Disciplina[] = [
-    { id: 1, nomeDisciplina: 'Laboratório de Inovação IV', descricao:'nada' },
-    { id: 2, nomeDisciplina: 'Programação Orientada a Objeto II', descricao:'nada' }
-  ];
+  disciplinas: Disciplina[] = [];
 
   constructor(private disciplinaService: DisciplinaService) {}
 
